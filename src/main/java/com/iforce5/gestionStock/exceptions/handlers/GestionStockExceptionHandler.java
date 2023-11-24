@@ -17,7 +17,7 @@ public class GestionStockExceptionHandler extends ResponseEntityExceptionHandler
             webRequest){
 
         final HttpStatus notFound =   HttpStatus.NOT_FOUND;
-      final  ErrorDto errorDto = ErrorDto.builder()
+        final  ErrorDto errorDto = ErrorDto.builder()
                 .errorCode(entityNotFoundException.getErrorCode())
                 .httpCode(notFound.value())
                 .message(entityNotFoundException.getMessage())
@@ -30,7 +30,7 @@ public class GestionStockExceptionHandler extends ResponseEntityExceptionHandler
             webRequest){
         final HttpStatus badRequest =   HttpStatus.BAD_REQUEST;
 
-      final ErrorDto errorDto =  ErrorDto.builder()
+        final ErrorDto errorDto =  ErrorDto.builder()
                 .errorCode(invalidEntityException.getErrosCode())
                 .httpCode(badRequest.value())
                 .message(invalidEntityException.getMessage())

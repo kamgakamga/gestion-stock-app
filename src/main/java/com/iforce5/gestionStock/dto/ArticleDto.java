@@ -34,7 +34,7 @@ public class ArticleDto {
  	private CategoryDto category; 
  	
  	
- 	public static ArticleDto fromEntity(Article article) {
+ 	public static ArticleDto articleToArticleDto(Article article) {
 		if(article == null) {
 			return null;
 		}
@@ -50,7 +50,7 @@ public class ArticleDto {
 	}
 	
 
-	public Article toDto(ArticleDto articleDto) {
+	public static Article articleDtoToArticle(ArticleDto articleDto) {
 		if(articleDto == null) {
 			return null;
 		}
