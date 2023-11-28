@@ -1,9 +1,6 @@
 package com.iforce5.gestionStock.dto;
 
-import javax.persistence.Column;
-
 import com.iforce5.gestionStock.models.Adresse;
-import com.iforce5.gestionStock.models.Category;
 
 import lombok.Builder;
 import lombok.Data;

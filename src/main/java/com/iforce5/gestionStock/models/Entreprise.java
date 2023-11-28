@@ -31,16 +31,16 @@ public class Entreprise extends AbstractEntity {
 	@Column(name = "email")
  	private String email;
 	
-	@Column(name = "codefiscal")
+	@Column(name = "code_fiscal")
  	private String codeFiscal;
 	
-	@Column(name = "numtel")
+	@Column(name = "num_tel")
  	private String numTel;
 	
 	@Embedded//permet de definir une relation de composition
 	private Adresse adresse;
 	
-	@Column(name = "siteweb")
+	@Column(name = "site_web")
  	private String steWeb;
 	
 	@OneToMany(mappedBy = "entreprise")

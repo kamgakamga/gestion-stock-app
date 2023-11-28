@@ -32,7 +32,7 @@ public class Client extends AbstractEntity {
 	@Column(name = "email")
  	private String email;
 	
-	@Column(name = "numtel")
+	@Column(name = "num_tel")
  	private String numTel;
 	
 	@Embedded//permet de definir une relation de composition

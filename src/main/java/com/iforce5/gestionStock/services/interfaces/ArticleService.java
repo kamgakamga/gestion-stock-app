@@ -7,8 +7,8 @@ import java.util.List;
 public interface ArticleService {
 
     ArticleDto saveArticle(ArticleDto articleDto);
-    ArticleDto findArticleById(Long articleId);
+    ArticleDto findArticleById(Integer articleId);
     ArticleDto findByArticleCode(String articleCode);
     List<ArticleDto> getAllArticle();
-    void deleteArticle(Long articleId);
+    void deleteArticle(Integer articleId);
 }

@@ -25,7 +25,7 @@ public class ArticleController implements ArticleApi {
     }
 
     @Override
-    public ArticleDto findArticleById(Long articleId) {
+    public ArticleDto findArticleById(Integer articleId) {
         return articleService.findArticleById(articleId);
     }
 
@@ -40,7 +40,7 @@ public class ArticleController implements ArticleApi {
     }
 
     @Override
-    public void deleteArticle(Long articleId) {
+    public void deleteArticle(Integer articleId) {
        articleService.deleteArticle(articleId);
     }
 }

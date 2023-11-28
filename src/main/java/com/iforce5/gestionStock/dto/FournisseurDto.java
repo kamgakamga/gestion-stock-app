@@ -2,14 +2,7 @@ package com.iforce5.gestionStock.dto;
 
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.OneToMany;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.iforce5.gestionStock.models.Adresse;
-import com.iforce5.gestionStock.models.Client;
-import com.iforce5.gestionStock.models.CommandeFounisseur;
 import com.iforce5.gestionStock.models.Fournisseur;
 
 import lombok.Builder;

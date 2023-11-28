@@ -20,9 +20,9 @@ import lombok.NoArgsConstructor;
 public class LigneCommandeClient extends AbstractEntity {
 
 	@ManyToOne
-	@JoinColumn(name = "idarticle")
+	@JoinColumn(name = "id_article")
 	private Article article;
 	@ManyToOne
-	@JoinColumn(name = "idcommandeclient")
+	@JoinColumn(name = "id_commande_client")
 	private CommandeClient commandeClient;
 }

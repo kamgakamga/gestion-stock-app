@@ -28,7 +28,7 @@ public class MouvementStock extends AbstractEntity{
 	private BigDecimal quantite;
 	
 	@ManyToOne
-	@JoinColumn(name = "idarticle")
+	@JoinColumn(name = "id_article")
 	private Article article;
 	
 	//@Column(name = "typemvt")

@@ -2,6 +2,7 @@ package com.iforce5.gestionStock.dto;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;
@@ -28,12 +29,11 @@ public class CommandeClientDto {
 	
 	@JsonIgnore
 	private ClientDto clientDto;
-	
-	@JsonIgnore
+
 	private List<LigneCommandeClientDto> ligneCommandeClientDto;
 
 	
-	public CommandeClientDto fromEntity(CommandeClient commandeClient) {
+	public  static CommandeClientDto commandeClientTocommandeClientDto(CommandeClient commandeClient) {
 		if(commandeClient == null) {
 			return null;
 		}
@@ -41,22 +41,19 @@ public class CommandeClientDto {
 				.id(commandeClient.getId())
 				.code(commandeClient.getCode())
 				.dateCommande(commandeClient.getDateCommande())
+				.clientDto(ClientDto.clientToClientDto(commandeClient.getClient()))
 				.build();
 	}
 	
 
-	public CommandeClient toDto(CommandeClientDto commandeClientDto) {
-		if(commandeClientDto == null) {
-			return null;
-		}
+	public static CommandeClient commandeClientDtoTocommandeClient(CommandeClientDto commandeClientDto, Client client) {
 		CommandeClient commandeClient = new CommandeClient();
 				    
 		commandeClient.setId(commandeClientDto.getId());
 		commandeClient.setCode(commandeClientDto.getCode());
 		commandeClient.setDateCommande(commandeClient.getDateCommande());
-		
-	
-				    return commandeClient;
+		commandeClient.setClient(client);
+		return commandeClient;
 	}
 	
 }

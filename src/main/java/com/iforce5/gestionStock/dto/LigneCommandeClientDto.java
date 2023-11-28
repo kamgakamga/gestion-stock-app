@@ -1,12 +1,6 @@
 package com.iforce5.gestionStock.dto;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.iforce5.gestionStock.models.Article;
-import com.iforce5.gestionStock.models.CommandeClient;
-import com.iforce5.gestionStock.models.Fournisseur;
 import com.iforce5.gestionStock.models.LigneCommandeClient;
 
 import lombok.Builder;
@@ -25,7 +19,7 @@ public class LigneCommandeClientDto {
 	private CommandeClientDto commandeClientDto;
 	
 	
-	public LigneCommandeClientDto fromEntity(LigneCommandeClient ligneCommandeClient) {
+	public static LigneCommandeClientDto LigneCommandeClientToLigneCommandeClientDto (LigneCommandeClient ligneCommandeClient) {
 		if(ligneCommandeClient == null) {
 			return null;
 		}
@@ -35,7 +29,7 @@ public class LigneCommandeClientDto {
 	}
 	
 
-	public LigneCommandeClient toDto(LigneCommandeClientDto ligneCommandeClientDto) {
+	public static LigneCommandeClient LigneCommandeClientDtoToLigneCommandeClient(LigneCommandeClientDto ligneCommandeClientDto) {
 		if(ligneCommandeClientDto == null) {
 			return null;
 		}

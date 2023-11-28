@@ -22,24 +22,24 @@ import lombok.NoArgsConstructor;
 @Table(name = "article")
 public class Article  extends AbstractEntity{
 
-	@Column(name = "codearticle")
+	@Column(name = "code_article")
 	private String codeArticle;
 	
 	@Column(name = "designation")
 	private String designation;
 	
-	@Column(name = "prixunitaire")
+	@Column(name = "prix_unitaire")
 	private BigDecimal prixUnitaire;
 	
-	@Column(name = "tauxtva")
+	@Column(name = "taux_tva")
 	private BigDecimal tauxTva;
 	
-	@Column(name = "prixunitairettc")
+	@Column(name = "prix_unitaire_ttc")
 	private BigDecimal prixUnitaireTTC;
 	
 	@Column(name = "photo")
  	private String photo;
 	
-	@JoinColumn(name = "idcategory")
+	@JoinColumn(name = "id_category")
  	private Category category; 
 }

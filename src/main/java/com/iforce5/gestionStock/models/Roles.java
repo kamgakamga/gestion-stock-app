@@ -17,10 +17,13 @@ import lombok.NoArgsConstructor;
 @Table(name = "roles")
 public class Roles extends AbstractEntity {
 
-	@Column(name = "rolename")
+	@Column(name = "role_name")
 	private String roleName;
+
+	@Column(name = "role_description")
+	private String roleDescription;
 	 
 	@ManyToOne
-	@JoinColumn(name = "idutilisateur")
+	@JoinColumn(name = "id_utilisateur")
 	private Utilisateur utilisateur;
 }

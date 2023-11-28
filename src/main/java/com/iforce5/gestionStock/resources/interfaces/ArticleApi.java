@@ -1,8 +1,6 @@
 package com.iforce5.gestionStock.resources.interfaces;
 
 import com.iforce5.gestionStock.dto.ArticleDto;
-import com.iforce5.gestionStock.services.interfaces.ArticleService;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,14 +18,14 @@ public interface ArticleApi {
        // this.articleService = articleService;
  //   }
 
-    @PostMapping(value =  "/article/create",
+    @PostMapping(value = APP_ROOT+"/article/create",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     ArticleDto saveArticle(@RequestBody ArticleDto articleDto);
 
     @GetMapping(value =  "/article/{articleId}",
             produces = MediaType.APPLICATION_JSON_VALUE)
-    ArticleDto findArticleById(@PathVariable("articleId") Long articleId);
+    ArticleDto findArticleById(@PathVariable("articleId") Integer articleId);
 
     @GetMapping(value =  "/article/{codeArticle}",
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -39,5 +37,5 @@ public interface ArticleApi {
 
     @DeleteMapping(value =  "/article/delete/{articleId}",
             produces = MediaType.APPLICATION_JSON_VALUE)
-    void deleteArticle(@PathVariable("articleId") Long articleId);
+    void deleteArticle(@PathVariable("articleId") Integer articleId);
 }

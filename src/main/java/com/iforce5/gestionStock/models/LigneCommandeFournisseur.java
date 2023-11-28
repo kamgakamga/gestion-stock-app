@@ -17,12 +17,12 @@ import lombok.NoArgsConstructor;
 public class LigneCommandeFournisseur extends AbstractEntity {
 
 	 @ManyToOne
-	 @JoinColumn(name = "idarticle")
+	 @JoinColumn(name = "id_article")
      private Article article;
 	 
 	 
 	 @ManyToOne
-	 @JoinColumn(name = "idcommandefournisseur")
-     private CommandeFounisseur commandeFournisseur;
+	 @JoinColumn(name = "ligneCommandeFournisseur")
+     private CommandeFournisseur commandeFournisseur;
 
 }

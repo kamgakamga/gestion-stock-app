@@ -43,7 +43,7 @@ public class ArticleServiceImpl  implements ArticleService {
     }
 
     @Override
-    public ArticleDto findArticleById(Long articleId) {
+    public ArticleDto findArticleById(Integer articleId) {
         if(articleId == null){
             log.error(" Article ID is null");
             return  null;
@@ -70,7 +70,7 @@ public class ArticleServiceImpl  implements ArticleService {
     }
 
     @Override
-    public void deleteArticle(Long articleId) {
+    public void deleteArticle(Integer articleId) {
         if(articleId == null){
             log.error(" Article ID is null");
             return;

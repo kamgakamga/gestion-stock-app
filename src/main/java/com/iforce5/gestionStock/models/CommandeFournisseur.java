@@ -19,17 +19,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "commandefounisseur")
-public class CommandeFounisseur extends AbstractEntity{
+@Table(name = "commande_founisseur")
+public class CommandeFournisseur extends AbstractEntity{
 
 	@Column(name = "code")
 	private String code;
 	
-	@Column(name = "datecommande")
+	@Column(name = "date_commande")
 	private Instant dateCommande;
 	
 	@ManyToOne
-	@JoinColumn(name = "idFournisseur")
+	@JoinColumn(name = "id_fournisseur")
 	private Fournisseur fournisseur;
 	
     @OneToMany(mappedBy = "commandeFournisseur")

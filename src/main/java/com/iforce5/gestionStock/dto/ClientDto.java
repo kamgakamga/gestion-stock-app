@@ -38,7 +38,7 @@ public class ClientDto {
  	private List<CommandeClientDto> commandeClientDto;
 
  	
- 	public ClientDto fromEntity(Client client) {
+ 	public static ClientDto clientToClientDto(Client client) {
 		if(client == null) {
 			return null;
 		}
@@ -53,7 +53,7 @@ public class ClientDto {
 	}
 	
 
-	public Client toDto(ClientDto clientDto) {
+	public static Client clientDtoToClient(ClientDto clientDto) {
 		if(clientDto == null) {
 			return null;
 		}

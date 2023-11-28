@@ -1,13 +1,7 @@
 package com.iforce5.gestionStock.dto;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.iforce5.gestionStock.models.MouvementStock;
 import com.iforce5.gestionStock.models.Roles;
-import com.iforce5.gestionStock.models.Utilisateur;
 
 import lombok.Builder;
 import lombok.Data;
@@ -19,12 +13,20 @@ public class RolesDto {
 	private Integer id;
 	
 	private String roleName;
-	 
+
+	private String description;
+
 	@JsonIgnore
 	private UtilisateurDto utilisateurDto;
-	
-	
-	public RolesDto fromEntity(Roles roles) {
+
+    public static Roles buildUpdateRole(RolesDto rolesDto, Roles roleToUpdate) {
+
+		roleToUpdate.setRoleName(rolesDto.getRoleName());
+		roleToUpdate.setRoleDescription(rolesDto.getDescription());
+		return roleToUpdate;
+    }
+
+	public  static RolesDto fromEntity(Roles roles) {
 		if(roles == null) {
 			return null;
 		}
@@ -35,7 +37,7 @@ public class RolesDto {
 	}
 	
 
-	public Roles toDto(RolesDto rolesDto) {
+	public static Roles buildRolesFromRoleDto(RolesDto rolesDto) {
 		if(rolesDto == null) {
 			return null;
 		}

@@ -1,6 +1,6 @@
 package com.iforce5.gestionStock.utils;
 
-public class Constants {
+public interface Constants {
 
 
     public static String APP_ROOT = "api/v1";

@@ -1,12 +1,7 @@
 package com.iforce5.gestionStock.dto;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.iforce5.gestionStock.models.Article;
-import com.iforce5.gestionStock.models.CommandeFounisseur;
-import com.iforce5.gestionStock.models.LigneCommandeClient;
+
 import com.iforce5.gestionStock.models.LigneCommandeFournisseur;
 
 import lombok.Builder;
@@ -24,8 +19,8 @@ public class LigneCommandeFournisseurDto {
     @JsonIgnore
     private CommandeFournisseurDto commandeFournisseurDto;
 
-    
-    public LigneCommandeFournisseurDto fromEntity(LigneCommandeFournisseur ligneCommandeFournisseur) {
+
+	public static LigneCommandeFournisseurDto commandeFounisseurToCommandeFounisseurDto(LigneCommandeFournisseur ligneCommandeFournisseur) {
 		if(ligneCommandeFournisseur == null) {
 			return null;
 		}
@@ -35,7 +30,7 @@ public class LigneCommandeFournisseurDto {
 	}
 	
 
-	public LigneCommandeFournisseur toDto(LigneCommandeFournisseurDto ligneCommandeFournisseurDto) {
+	public static LigneCommandeFournisseur commandeFounisseurDtoToCommandeFounisseur(LigneCommandeFournisseurDto ligneCommandeFournisseurDto) {
 		if(ligneCommandeFournisseurDto == null) {
 			return null;
 		}

@@ -37,9 +37,16 @@ public class CategoryDto {
 				     .designation(category.getDesignation())
 				     .build();
 	}
-	
-	
-	public Category toDto(CategoryDto categoryDto) {
+
+	public static Category buildUpdateCategory(CategoryDto categoryDto, Category categoryToUpdate) {
+		categoryToUpdate.setCode(categoryDto.getCode());
+		categoryToUpdate.setDesignation(categoryDto.getDesignation());
+		return  categoryToUpdate;
+
+	}
+
+
+	public static Category buildCategoryFromCategoryDto(CategoryDto categoryDto) {
 		if(categoryDto == null) {
 			return null;
 		}

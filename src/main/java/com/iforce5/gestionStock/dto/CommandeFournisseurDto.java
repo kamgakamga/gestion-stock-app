@@ -3,17 +3,10 @@ package com.iforce5.gestionStock.dto;
 import java.time.Instant;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.iforce5.gestionStock.models.CommandeClient;
-import com.iforce5.gestionStock.models.CommandeFounisseur;
-import com.iforce5.gestionStock.models.Fournisseur;
-import com.iforce5.gestionStock.models.LigneCommandeFournisseur;
+import com.iforce5.gestionStock.models.CommandeFournisseur;
 
+import com.iforce5.gestionStock.models.Fournisseur;
 import lombok.Builder;
 import lombok.Data;
 
@@ -22,43 +15,40 @@ import lombok.Data;
 public class CommandeFournisseurDto {
 
 	private Integer id;
-	
+
 	private String code;
-	
+
 	private Instant dateCommande;
-	
+
 	@JsonIgnore
 	private FournisseurDto fournisseurDto;
-	
-	@JsonIgnore
+
 	private List<LigneCommandeFournisseurDto> ligneCommandeFournisseurDto;
-	
-	
-	
-	public CommandeFournisseurDto fromEntity(CommandeFounisseur commandeFounisseur) {
-		if(commandeFounisseur == null) {
+
+
+
+	public static CommandeFournisseurDto commandeFournisseurToCommandeFournisseurDto(CommandeFournisseur commandeFournisseur) {
+		if(commandeFournisseur == null) {
 			return null;
 		}
 		return CommandeFournisseurDto.builder()
-				.id(commandeFounisseur.getId())
-				.code(commandeFounisseur.getCode())
-				.dateCommande(commandeFounisseur.getDateCommande())
+				.id(commandeFournisseur.getId())
+				.code(commandeFournisseur.getCode())
+				.dateCommande(commandeFournisseur.getDateCommande())
 				.build();
 	}
-	
 
-	public CommandeFounisseur toDto(CommandeFournisseurDto commandeFournisseurDto) {
+
+	public static CommandeFournisseur commandeFounisseurDtoToCommandeFounisseur(CommandeFournisseurDto commandeFournisseurDto, Fournisseur fournisseur) {
 		if(commandeFournisseurDto == null) {
 			return null;
 		}
-		CommandeFounisseur commandeFounisseur = new CommandeFounisseur();
-				    
-		commandeFounisseur.setId(commandeFournisseurDto.getId());
-		commandeFounisseur.setCode(commandeFournisseurDto.getCode());
-		commandeFounisseur.setDateCommande(commandeFournisseurDto.getDateCommande());
-		
-	
-				    return commandeFounisseur;
+		CommandeFournisseur commandeFournisseur = new CommandeFournisseur();
+
+		commandeFournisseur.setId(commandeFournisseurDto.getId());
+		commandeFournisseur.setCode(commandeFournisseurDto.getCode());
+		commandeFournisseur.setDateCommande(commandeFournisseurDto.getDateCommande());
+		return commandeFournisseur;
 	}
-	
+
 }

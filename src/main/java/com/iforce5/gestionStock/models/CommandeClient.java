@@ -26,11 +26,11 @@ public class CommandeClient extends AbstractEntity {
 	@Column(name = "code")
 	private String code;
 	
-	@Column(name = "datecommande")
+	@Column(name = "date_commande")
 	private Date dateCommande;
 	
 	@ManyToOne
-	@JoinColumn(name="idclient")
+	@JoinColumn(name="id_client")
 	private Client client;
 	
 	@OneToMany(mappedBy = "commandeClient")
